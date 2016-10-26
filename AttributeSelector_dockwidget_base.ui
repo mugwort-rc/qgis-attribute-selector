@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AttributeSelectorDockWidgetBase</class>
+ <widget class="QDockWidget" name="AttributeSelectorDockWidgetBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>318</width>
+    <height>115</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AttributeSelector</string>
+  </property>
+  <widget class="QWidget" name="dockWidgetContents">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="labelLayer">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string>Layer</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="labelField">
+      <property name="text">
+       <string>Field</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="labelValue">
+      <property name="text">
+       <string>Value</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="lineEditValue"/>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButtonSearch">
+      <property name="text">
+       <string>Search</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QgsFieldComboBox" name="comboBoxField"/>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QgsMapLayerComboBox" name="comboBoxLayer"/>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">qgis/gui</header>
+  </customwidget>
+  <customwidget>
+   <class>QgsFieldComboBox</class>
+   <extends>QComboBox</extends>
+   <header location="global">qgis/gui</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lineEditValue</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButtonSearch</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>186</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>283</x>
+     <y>198</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
